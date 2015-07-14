@@ -8,9 +8,7 @@ function remig() {
 
   echo "Remigrating $stage"
 
-  PADRINO_ENV=$stage bundle exec rake ar:drop && \
-  PADRINO_ENV=$stage bundle exec rake ar:create && \
-  PADRINO_ENV=$stage bundle exec rake ar:migrate
+  PADRINO_ENV=$stage bundle exec rake ar:drop ar:create ar:migrate
 }
 
 # Usage: remas [stage]
@@ -23,9 +21,7 @@ function remas() {
 
   echo "Remastering $stage"
 
-  PADRINO_ENV=$stage bundle exec rake ar:migrate && \
-  PADRINO_ENV=$stage bundle exec rake master:all && \
-  PADRINO_ENV=$stage bundle exec rake db:seed
+  PADRINO_ENV=$stage bundle exec rake ar:migrate master:all db:seed
 }
 
 alias sss='bundle exec padrino s -h 0.0.0.0'
