@@ -26,3 +26,15 @@ function remas() {
 
 alias sss='bundle exec padrino s -h 0.0.0.0'
 
+# Usage: adremig [stage]
+# if no stage is specified, development will be used
+function adremig() {
+  stage=$1
+  if [[ -z $stage ]]; then
+    stage="development"
+  fi
+
+  echo "Remigrating Admin $stage"
+
+  RAILS_ENV=$stage bundle exec rake db:drop db:create db:migrate
+}
