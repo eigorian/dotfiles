@@ -16,6 +16,11 @@
 	psreview = "!f(){ git push origin HEAD:refs/for/$1;};f"
 	rup = remote update --prune
 	s = status --branch --short
+	push2gerrit = "!f() { git push origin HEAD:refs/for/$(git branch -r | cut -d/ -f2 | peco)/$(git branch | grep '*' | cut -d ' ' -f2); }; f"
+	changed-files = "!f() { git status --short | peco | awk '{print $2}'; }; f"
+	pad = "!f() { git add $(git changed-files); }; f"
+	addours = "!f() { files=`git changed-files`; git checkout --ours ${files}; git add ${files}; }; f"
+	addtheirs = "!f() { files=`git changed-files`; git checkout --theirs ${files}; git add ${files}; }; f"
 [color]
 	ui = true
 	status = auto
