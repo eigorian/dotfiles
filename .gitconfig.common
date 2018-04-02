@@ -1,35 +1,35 @@
 [core]
-	preloadindex = true
-	fscache = true
+    preloadindex = true
+    fscache = true
 [alias]
-	co = checkout
-	br = branch
-	st = status
-	df = diff
-	ft = fetch
-	pushhead = push origin HEAD:refs/for/master
-	amend = commit --amend
-	amendc = commit --amend -C HEAD
-	fp = fetch --prune
-	graph = log --graph --date-order -C -M --pretty=format:'<%h> %ad [%an] %Cgreen%d%Creset %s' --all --date=short
-	tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	psreview = "!f(){ git push origin HEAD:refs/for/$1;};f"
-	rup = remote update --prune
-	s = status --branch --short
-	push2gerrit = "!f() { git push origin HEAD:refs/for/$(git branch -r | cut -d/ -f2 | peco)/$(git branch | grep '*' | cut -d ' ' -f2); }; f"
-	changed-files = "!f() { git status --porcelain | peco | cut -c 4-; }; f"
-	pad = "!f() { git add $(git changed-files); }; f"
-	addours = "!f() { files=`git changed-files`; git checkout --ours ${files}; git add ${files}; }; f"
-	addtheirs = "!f() { files=`git changed-files`; git checkout --theirs ${files}; git add ${files}; }; f"
+    co = checkout
+    br = branch
+    st = status
+    df = diff
+    ft = fetch
+    pushhead = push origin HEAD:refs/for/master
+    amend = commit --amend
+    amendc = commit --amend -C HEAD
+    fp = fetch --prune
+    graph = log --graph --date-order -C -M --pretty=format:'<%h> %ad [%an] %Cgreen%d%Creset %s' --all --date=short
+    tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    psreview = "!f(){ git push origin HEAD:refs/for/$1;};f"
+    rup = remote update --prune
+    s = status --branch --short
+    push2gerrit = "!f() { git push origin HEAD:refs/for/$(git branch -r | cut -d/ -f2 | peco)/$(git branch | grep '*' | cut -d ' ' -f2); }; f"
+    changed-files = "!f() { git status --porcelain | peco | cut -c 4-; }; f"
+    pad = "!f() { git add $(git changed-files); }; f"
+    addours = "!f() { files=`git changed-files`; git checkout --ours ${files}; git add ${files}; }; f"
+    addtheirs = "!f() { files=`git changed-files`; git checkout --theirs ${files}; git add ${files}; }; f"
     delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 [color]
-	ui = true
-	status = auto
-	diff = auto
-	branch = auto
-	interactive = auto
-	grep = auto
+    ui = true
+    status = auto
+    diff = auto
+    branch = auto
+    interactive = auto
+    grep = auto
 [push]
-	default = matching
+    default = matching
 [merge]
-	ff = false
+    ff = false
