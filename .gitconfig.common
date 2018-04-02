@@ -21,6 +21,7 @@
 	pad = "!f() { git add $(git changed-files); }; f"
 	addours = "!f() { files=`git changed-files`; git checkout --ours ${files}; git add ${files}; }; f"
 	addtheirs = "!f() { files=`git changed-files`; git checkout --theirs ${files}; git add ${files}; }; f"
+    delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 [color]
 	ui = true
 	status = auto
