@@ -6,6 +6,8 @@ set ruler
 set showcmd
 set showmatch
 set laststatus=2
+set list
+set listchars=tab:»-,trail:-,nbsp:%,eol:↲
 
 " programming
 syntax on
