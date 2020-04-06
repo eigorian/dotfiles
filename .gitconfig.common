@@ -2,6 +2,7 @@
     preloadindex = true
     fscache = true
 [alias]
+    cm = commit
     co = checkout
     br = branch
     st = status
