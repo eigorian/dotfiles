@@ -34,3 +34,22 @@
     default = matching
 [merge]
     ff = false
+    conflictstyle = diff3
+
+
+#### delta
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+[interactive]
+    diffFilter = delta --color-only
+[add.interactive]
+    useBuiltin = false
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    #side-by-side = true
+    syntax-theme = GitHub
+    line-numbers = true
