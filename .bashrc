@@ -2,6 +2,7 @@
 
 export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 
+alias g="git"
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
